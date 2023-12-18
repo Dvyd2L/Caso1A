@@ -1,0 +1,33 @@
+---
+import type { ILink } from "@assets/interfaces/index.d.ts";
+
+interface Props {
+  link: ILink;
+}
+
+const { link } = Astro.props;
+---
+
+<li class="link-item">
+  <a href={link.href ?? "#"} target={link.target} rel={link.rel}>
+    {link.icon}
+    {link.name}
+    <slot />
+  </a>
+</li>
+
+<style>
+  .link-item {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    opacity: 66%;
+    &:hover {
+      opacity: 100%;
+
+      /* esto aun no funciona */
+      &:not(:hover){
+        opacity: 50%;
+      }
+    }
+  }
+</style>

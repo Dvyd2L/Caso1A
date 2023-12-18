@@ -1,0 +1,14 @@
+---
+import Link from "@components/Link.astro";
+import {socialMedia as links} from '@assets/lib/links'
+---
+
+<address class="col-md-4 d-flex align-items-center">
+  <!-- Especifica una sección que contiene información de contacto. -->
+  <h2>Redes Sociales</h2>
+  <ul id="rrss">
+    {links && links.map((link) => <Link link={link} />)}
+  </ul>
+</address>
+
+<style></style>

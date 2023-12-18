@@ -1,44 +1,45 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
+import Card from '@components/Card.astro';
 
-const title = "Caso 1A";
+const title = "Información Descriptiva";
 ---
 
 <Layout title={title}>
 	<main>
 		<h1>{title}</h1>
+		
+		<Card title='Autopsy 4.21.0 (RELEASE)' href='./1' body=''>
+			<img src="https://www.autopsy.com/wp-content/uploads/2019/08/autopsy-logo.svg" alt="Autopsy logo">
+		</Card>
 
-		<p>Este informe pericial ha sido solicitado por EmpresaCaso1A, que acude a nosotros como investigadores
-			forenses y nos indica que, en un equipo corporativo, un usuario ha notificado el día 17/9/2020 el robo de
-			credenciales de acceso a Gmail y sospecha de otro usuario, con quien comparte la misma máquina. Se nos
-			requiere:</p>
+		<Card title='FullEventLogView 1.80' href='./2' body=''>
+			by <img src="https://www.nirsoft.net/nirsoft2.gif" alt="NirSoft logo">
+		</Card>
 
-		<ul>
-			<li>Investigar si existe algún software que esté realizando el robo de contraseñas en este equipo.</li>
-			<li>Determinar la fecha de instalación de dicho software.</li>
-			<li>Identificar al usuario que instaló el software.</li>
-			<li>Rastrear la vía por la cual el software pudo haber llegado al equipo.</li>
-			<li>Descubrir cómo pudo realizarse la instalación si el usuario no tenía permisos para realizar dicha
-				acción.</li>
-		</ul>
+		<Card title='MFT Explorer' href='./3' body=''>
+			<img src="https://ericzimmerman.github.io/logoSmall.jpg" alt="Autopsy logo">
+		</Card>
 
-		<p>El análisis de este informe se centrará exclusivamente en demostrar el robo de credenciales de la cuenta de
-			Gmail de nuestro cliente. No se realizará ningún juicio sobre el contenido de la investigación.</p>
+		<Card title='RegistryExplorer' href='./4' body=''>
+			<img src="https://ericzimmerman.github.io/logoSmall.jpg" alt="Autopsy logo">
+		</Card>
+
+		<Card title='TimelineExplorer' href='./5' body=''>
+			<img src="https://ericzimmerman.github.io/logoSmall.jpg" alt="Autopsy logo">
+		</Card>
 	</main>
 </Layout>
 
 <style>
 	main {
-		/* margin: auto; */
-		/* padding: 1rem; */
+		margin: auto;
+		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
-	}
-	span {
-		font-weight: bold;
 	}
 	.astro-a {
 		position: absolute;

@@ -1,4 +1,7 @@
 ---
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
+import Progress from '@components/Progress.astro';
 interface Props {
 	title: string;
 }
@@ -7,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es-es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -17,7 +20,17 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<div class="layout">
+			<Header titulo='Caso 1A'>
+				<Progress />
+			</Header>
+
+			<div class="container">
+				<slot />
+			</div>
+			
+			<Footer/>
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -30,22 +43,61 @@ const { title } = Astro.props;
 			rgb(var(--accent)),
 			rgb(var(--accent-light)) 30%,
 			white 60%
-		);
+			);
+			
+		color-scheme: dark light;
 	}
+
 	html {
 		font-family: system-ui, sans-serif;
 		background: #13151a;
 		background-size: 224px;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	body {
+		margin: 0;
 	}
+
+	a {
+		text-decoration: none;
+	}
+
+	ul, ol {
+    list-style: none;
+  }
+
+  .layout {
+    display: grid;
+    gap: 1rem;
+	
+    grid-template-columns: repeat(12, minmax(calc(25vw/12), calc(100vw/12)));
+    grid-template-rows: repeat(3, max-content);
+    grid-template-areas:
+      "navbar navbar navbar navbar navbar navbar navbar navbar navbar navbar navbar navbar"
+      ". container container container container container container container container container container ."
+      "about about about about about about about about about about about about";
+  }
+
+  .header {
+    grid-area: navbar;
+  }
+
+  .container {
+    grid-area: container;
+
+    min-height: 50vh;
+    border-radius: 0.5rem;
+
+    background-color: var(--color-primary);
+    box-shadow: 0 0 2rem var(--color-primary);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .footer {
+    grid-area: about;
+  }
 </style>

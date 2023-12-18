@@ -1,0 +1,27 @@
+---
+---
+
+<div class="progress"/>
+
+<style>
+    .progress {
+        position: fixed;
+        top: 0;
+        width: 0;
+        height: 1rem;
+        background-color: lightgreen;
+        box-shadow: 0 0 1rem lightgreen;
+
+        animation: progress auto linear;
+        animation-timeline: scroll(root);
+    }
+
+    @keyframes progress {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+</style>

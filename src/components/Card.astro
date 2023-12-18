@@ -9,26 +9,33 @@ const { href, title, body } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
+	<a href={href} target="_blank">
 		<h2>
 			{title}
-			<span>&rarr;</span>
 		</h2>
+
+		<slot/>
+
 		<p>
 			{body}
 		</p>
 	</a>
 </li>
+
 <style>
 	.link-card {
+		margin: 1rem;
 		list-style: none;
+
 		display: flex;
-		padding: 1px;
+		gap: 1rem;
+
 		background-color: #23262d;
 		background-image: none;
 		background-size: 400%;
-		border-radius: 7px;
 		background-position: 100%;
+
+		border-radius: 7px;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 	}
@@ -41,10 +48,15 @@ const { href, title, body } = Astro.props;
 		color: white;
 		background-color: #23262d;
 		opacity: 0.8;
+
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
 	}
 	h2 {
 		margin: 0;
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 	p {

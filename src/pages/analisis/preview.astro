@@ -1,45 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
+import Card from '@components/Card.astro';
 
-const title = "Caso 1A";
+const title = "Análisis de Evidencias";
 ---
 
 <Layout title={title}>
 	<main>
 		<h1>{title}</h1>
+		
+		<p>Al comenzar la investigación se ha tenido en cuenta que la máquina intervenida de la cual se han obtenido
+			las evidencias y el análisis de estas, ha sucedido en zonas con diferentes husos horarios por lo que se ha
+			decidido establecer la línea de tiempo en base al Tiempo universal coordinado (UTC) para poder dar
+			respuesta contundente a la disparidad de horas en que se registraron los mismos eventos.</p>
 
-		<p>Este informe pericial ha sido solicitado por EmpresaCaso1A, que acude a nosotros como investigadores
-			forenses y nos indica que, en un equipo corporativo, un usuario ha notificado el día 17/9/2020 el robo de
-			credenciales de acceso a Gmail y sospecha de otro usuario, con quien comparte la misma máquina. Se nos
-			requiere:</p>
+		<Card title='Historial de navegación' href='./1' body=''>
+			<img src="/public/img/UsuarioMalo-historial_busquedas_chrome.png" alt="Autopsy logo" height="350px" width="750px">
+		</Card>
 
-		<ul>
-			<li>Investigar si existe algún software que esté realizando el robo de contraseñas en este equipo.</li>
-			<li>Determinar la fecha de instalación de dicho software.</li>
-			<li>Identificar al usuario que instaló el software.</li>
-			<li>Rastrear la vía por la cual el software pudo haber llegado al equipo.</li>
-			<li>Descubrir cómo pudo realizarse la instalación si el usuario no tenía permisos para realizar dicha
-				acción.</li>
-		</ul>
+		<Card title='Introducción de software malicioso en el equipo' href='./2' body=''>
+			<img src="/public/img/UsuarioMalo-historial_descargas_chrome.png" alt="Autopsy logo" height="350px" width="750px">
+		</Card>
 
-		<p>El análisis de este informe se centrará exclusivamente en demostrar el robo de credenciales de la cuenta de
-			Gmail de nuestro cliente. No se realizará ningún juicio sobre el contenido de la investigación.</p>
+		<Card title='Exploit de escalado de privilegios' href='./3' body=''>
+			<img src="/public/img/grupos_usuarios_windows.png" alt="Grupos usuarios Windows" height="350px" width="750px">
+		</Card>
 	</main>
 </Layout>
 
 <style>
-	main {
-		/* margin: auto; */
-		/* padding: 1rem; */
+	/* main {
+		margin: auto;
+		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
-	}
-	span {
-		font-weight: bold;
-	}
+	} */
 	.astro-a {
 		position: absolute;
 		top: -32px;

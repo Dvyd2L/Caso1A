@@ -1,0 +1,20 @@
+---
+import Link from "@components/Link.astro";
+import { pageNavigation as links } from "@assets/lib/links";
+---
+
+<ul class="links">
+  {links && links.map((link) => <Link link={link} />)}
+</ul>
+
+<style>
+  .links {
+    flex: 5;
+
+    list-style: none;
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+  }
+</style>

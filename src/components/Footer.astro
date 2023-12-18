@@ -1,0 +1,23 @@
+---
+import SocialMedia from "@components/SocialMedia.astro";
+---
+
+<footer class="footer">
+  <span>Dvyd 2023&copy;</span>
+  <slot/>
+  <SocialMedia />
+</article>
+
+<style>
+  .footer {
+    background-color: rgba(60, 60, 60, 0.5);
+    border-radius: 1rem 1rem 0 0;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+</style>
